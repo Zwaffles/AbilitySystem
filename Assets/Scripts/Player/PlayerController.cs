@@ -57,7 +57,10 @@ public class PlayerController : MonoBehaviour
         inputs.Gameplay.Shoot.performed += _ => currentWeapon.active = true;
         inputs.Gameplay.Shoot.canceled += _ => currentWeapon.active = false;
 
-        inputs.Gameplay.Ability1.performed += _ => GetComponent<AbilityHolder>().UseAbility();
+        inputs.Gameplay.Ability1.performed += _ => GetComponent<AbilityHolder>().UseAbility(0);
+        inputs.Gameplay.Ability2.performed += _ => GetComponent<AbilityHolder>().UseAbility(1);
+        inputs.Gameplay.Ability3.performed += _ => GetComponent<AbilityHolder>().UseAbility(2);
+        inputs.Gameplay.Ability4.performed += _ => GetComponent<AbilityHolder>().UseAbility(3);
     }
 
     private void OnDisable()

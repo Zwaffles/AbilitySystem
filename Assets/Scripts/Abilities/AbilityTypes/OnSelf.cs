@@ -15,13 +15,25 @@ public class OnSelf : Ability
         Cooldown,
     }
 
+    [Space]
     public List<StatAndMagnitude> statAndMagnitude = new List<StatAndMagnitude>();
 
     [Serializable]
     public class StatAndMagnitude
     {
+        [HideInInspector]
+        public string inspectorName;
+
         public StatType stat;
         public float magnitude;
+    }
+
+    private void OnValidate()
+    {
+        for(int i = 0; i < statAndMagnitude.Count; i++)
+        {
+            statAndMagnitude[i].inspectorName = statAndMagnitude[i].stat.ToString();
+        }
     }
 
     public override void Activate(GameObject parent)

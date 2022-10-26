@@ -16,7 +16,12 @@ MonoBehaviour:
   cooldown: 5
   duration: 10
   statAndMagnitude:
-  - stat: 0
+  - inspectorName: Speed
+    stat: 0
     magnitude: 5
-  - stat: 1
+  - inspectorName: JumpSpeed
+    stat: 1
+    magnitude: 3
+  - inspectorName: FireRate
+    stat: 2
     magnitude: 3
