@@ -1808,6 +1808,15 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   movementMultiplier: 1
   canMove: 1
+  stats:
+    speed:
+      baseValue: 10
+    jumpSpeed:
+      baseValue: 0
+    fireRate:
+      baseValue: 0
+    cooldown:
+      baseValue: 0
 --- !u!143 &2086206112
 CharacterController:
   m_ObjectHideFlags: 0

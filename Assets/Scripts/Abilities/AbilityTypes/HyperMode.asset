@@ -10,9 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9351b0a4c28752a4b82aca5ff803fff4, type: 3}
-  m_Name: Dash
+  m_Name: HyperMode
   m_EditorClassIdentifier: 
-  name: Dash
-  cooldown: 0.1
-  duration: 0.1
-  dashVelocity: 20
+  name: HyperMode
+  cooldown: 5
+  duration: 10
+  statAndMagnitude:
+  - stat: 0
+    magnitude: 5
+  - stat: 1
+    magnitude: 3

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,11 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public float walkingSpeed = 7.5f;
-    public float runningSpeed = 11.5f;
-    public float jumpSpeed = 8.0f;
+    public CharacterStat Speed;
+    public CharacterStat JumpSpeed;
+    public CharacterStat FireRate;
+    public CharacterStat Cooldown;
+
     public float gravity = 20.0f;
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
@@ -77,14 +80,14 @@ public class PlayerController : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
-        Vector2 curMovement = canMove ? (isRunning ? runningSpeed : walkingSpeed) * movement * movementMultiplier: Vector2.zero;
+        Vector2 curMovement = canMove ? (isRunning ? Speed.value : Speed.value) * movement * movementMultiplier : Vector2.zero;
 
         float movementDirectionY = moveDirection.y;
         moveDirection = (right * curMovement.x) + (forward * curMovement.y);
 
         if (isJumping && canMove && characterController.isGrounded)
         {
-            moveDirection.y = jumpSpeed;
+            moveDirection.y = JumpSpeed.value;
         }
         else
         {
