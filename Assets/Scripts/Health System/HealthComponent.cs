@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class HealthComponent : MonoBehaviour
 {
     [Header("Health"), SerializeField]
-    private float maxHealth = 100.0f;
+    protected float maxHealth = 100.0f;
 
     [Header("Sound"), SerializeField, Stem.SoundID]
     private Stem.ID healSoundID;
@@ -14,7 +14,7 @@ public abstract class HealthComponent : MonoBehaviour
     [SerializeField, Stem.SoundID]
     private Stem.ID deathSoundID;
 
-    private float currentHealth;
+    protected float currentHealth;
 
     public float MaxHealth
     {
@@ -25,7 +25,7 @@ public abstract class HealthComponent : MonoBehaviour
     public float CurrentHealth
     {
         get { return currentHealth; }
-        private set { currentHealth = value; }
+        protected set { currentHealth = value; }
     }
 
     public virtual void Awake()
