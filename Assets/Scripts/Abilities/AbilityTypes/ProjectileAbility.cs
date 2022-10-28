@@ -12,11 +12,11 @@ public class ProjectileAbility : Ability
 
     public override void Activate(GameObject parent)
     {
-        Transform spawnPoint = parent.GetComponent<PlayerController>().currentWeapon.transform;
+        Transform spawnPoint = parent.GetComponent<Player>().transform;
 
         GameObject projectileInstance = Instantiate(
             projectilePrefab,
-            spawnPoint.position,
+            spawnPoint.position + new Vector3(0, 1, 0),
             Quaternion.LookRotation(Vector3.up));
 
         projectileInstance.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * projectileLaunchForce);

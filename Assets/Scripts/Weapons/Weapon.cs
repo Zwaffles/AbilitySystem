@@ -11,13 +11,12 @@ public abstract class Weapon : MonoBehaviour
     public float range = 50f;
     public float hitForce = 100f;
 
-    public bool active;
+    private bool active;
 
     private bool canFire = true;
 
     private void Update()
     {
-        Debug.Log("can fire? " + canFire);
         if (active && canFire)
         {
             canFire = false;
@@ -26,9 +25,14 @@ public abstract class Weapon : MonoBehaviour
         }
     }
 
-    public virtual void Fire()
+    public void OnFirePressed()
     {
-        
+        active = true;
+    }
+    
+    public void OnFireReleased()
+    {
+        active = false;
     }
 
     private IEnumerator NextFire()
@@ -37,4 +41,8 @@ public abstract class Weapon : MonoBehaviour
         canFire = true;
     }
 
+    public virtual void Fire()
+    {
+
+    }
 }

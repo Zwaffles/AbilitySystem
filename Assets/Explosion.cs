@@ -8,7 +8,7 @@ public class Explosion : MonoBehaviour
 {
     [Header("AnimationCurve")]
     [SerializeField] private AnimationCurve animationCurve;
-    [SerializeField] private float timeInSeconds = 1f;
+    [SerializeField] private float timeInSeconds;
 
     private Vector3 initialScale;
     private Vector3 finalScale;
@@ -28,7 +28,7 @@ public class Explosion : MonoBehaviour
         animationCurve.postWrapMode = WrapMode.Once;
         storedTime = Time.time;
         active = true;
-        StartCoroutine(Destroy(timeInSeconds));
+        StartCoroutine(Destroy());
     }
 
     private void Update()
@@ -50,9 +50,9 @@ public class Explosion : MonoBehaviour
         Debug.Log(other.gameObject);
     }
 
-    IEnumerator Destroy(float duration)
+    IEnumerator Destroy()
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(timeInSeconds);
         Destroy(gameObject);
     }
 }

@@ -16,4 +16,4 @@ MonoBehaviour:
   cooldown: 5
   duration: 0
   projectilePrefab: {fileID: 5744475232156096055, guid: 7445fd373c3da7249b1f16077013478f, type: 3}
-  projectileLaunchForce: 700
+  projectileLaunchForce: 1476.6

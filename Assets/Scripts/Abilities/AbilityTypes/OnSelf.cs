@@ -38,7 +38,7 @@ public class OnSelf : Ability
 
     public override void Activate(GameObject parent)
     {
-        PlayerController player = parent.GetComponent<PlayerController>();
+        Player player = parent.GetComponent<Player>();
 
         foreach (StatAndMagnitude sam in statAndMagnitude) 
         {
@@ -63,7 +63,7 @@ public class OnSelf : Ability
 
     public override void BeginCooldown(GameObject parent)
     {
-        PlayerController player = parent.GetComponent<PlayerController>();
+        Player player = parent.GetComponent<Player>();
 
         player.Speed.RemoveAllModifiersFromSource(this);
 

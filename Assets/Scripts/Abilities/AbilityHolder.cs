@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static OnSelf;
 
+[RequireComponent(typeof(Player))]
 public class AbilityHolder : MonoBehaviour
 {
     public enum AbilityState
